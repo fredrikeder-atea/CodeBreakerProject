@@ -3,15 +3,15 @@ let attempt = document.getElementById('attempt');
 
 function guess() {
     let input = document.getElementById('user-guess');
-    if (answer == '' || attempt || '') {
+    if (answer.value == '' || attempt.value || '') {
         setHiddenFields();
     }
 }
 
 function setHiddenFields() {
-    answer = Math.floor(Math.random() * (10000));
-    while (answer.toString().length < 4) {
-        answer = "0" + answer;
+    answer.value = Math.floor(Math.random() * 10000).toString();
+    while (answer.value.length < 4) {
+        answer.value = "0" + answer.value;
     }
-    $("#attempt").val(0);
+    attempt.value = "0";
 }
